@@ -16,8 +16,8 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 
-function Favourites(props) {
-  const { isOpen, onClose, favourites, handleDeleteFavorites } = props;
+function Favorites(props) {
+  const { isOpen, onClose, products, handleDeleteFavorites } = props;
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
       <ModalOverlay />
@@ -36,7 +36,7 @@ function Favourites(props) {
               </Tr>
             </Thead>
             <Tbody>
-              {(favourites || []).map((p) => (
+              {(products || []).map((p) => (
                 <Tr>
                   <Td>
                     <Image
@@ -68,4 +68,4 @@ function Favourites(props) {
   );
 }
 
-export { Favourites };
+export { Favorites };

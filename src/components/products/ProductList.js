@@ -3,6 +3,8 @@ import {
   Box,
   Button,
   Image,
+  Skeleton,
+  Stack,
   Table,
   TableCaption,
   Tbody,
@@ -15,9 +17,19 @@ import {
 import React from "react";
 
 function ProductList(props) {
-  const { products, handleDeleteProduct, showFavorites, addFavorites } = props;
-  return (
+  const {
+    products,
+    handleDeleteProduct,
+    showFavorites,
+    addFavorites,
+    isLoading,
+  } = props;
+  console.log(products);
+  return isLoading ? (
+    <Loading />
+  ) : (
     <Box
+      className={""}
       width="600px"
       sx={{
         td: {
@@ -30,7 +42,7 @@ function ProductList(props) {
         ProductList
       </Text>
 
-      <Button onClick={showFavorites}>Show Favourite</Button>
+      <Button onClick={showFavorites}>Show List</Button>
 
       <Table variant="simple">
         <TableCaption>Product list</TableCaption>
@@ -67,6 +79,22 @@ function ProductList(props) {
         </Tbody>
       </Table>
     </Box>
+  );
+}
+
+function Loading() {
+  return (
+    <Stack>
+      <Skeleton height="20px" width="500px" />
+      <Skeleton height="20px" width="500px" />
+      <Skeleton height="20px" width="500px" />
+      <Skeleton height="20px" width="500px" />
+      <Skeleton height="20px" width="500px" />
+      <Skeleton height="20px" width="500px" />
+      <Skeleton height="20px" width="500px" />
+      <Skeleton height="20px" width="500px" />
+      <Skeleton height="20px" width="500px" />
+    </Stack>
   );
 }
 

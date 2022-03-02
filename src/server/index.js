@@ -16,9 +16,10 @@ app.use("/", (req, res, next) => {
     const data = req.body;
     console.log(data);
     const newId = cacheProduct[cacheProduct.length - 1].id;
-    const newProduct = [...cacheProduct, { ...(data || {}), id: newId + 1 }];
+    const newSingle = { ...(data || {}), id: newId + 1 };
+    const newProduct = [...cacheProduct, newSingle];
     cacheProduct = newProduct;
-    res.json(newProduct);
+    res.json(newSingle);
   } else if (req.method === "DELETE") {
     const id = req.url.split("/")[1];
     const newProduct1 = cacheProduct.filter((it) => it.id !== +id);
