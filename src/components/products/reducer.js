@@ -1,7 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { toNormalize } from "../../libs/common.lib";
 
 const initialState = {
   products: [],
+  productsNormalized: {},
 };
 
 export const productSlice = createSlice({
@@ -10,6 +12,7 @@ export const productSlice = createSlice({
   reducers: {
     updateProduct: (state, actions) => {
       state.products = actions.payload;
+      state.productsNormalized = toNormalize(actions.payload);
     },
   },
 });
