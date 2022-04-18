@@ -1,0 +1,10 @@
+{
+  "hello": "Hello, this message from i18n",
+  "contact": "Contact",
+  "account": "Account",
+  "config": "Config",
+  "edit": "Edit",
+  "cancel": "Cancel",
+  "save": "Save",
+  "delete": "Delete"
+}
